@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Control.Resources>
+             Width="800" Height="600">
+    <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
@@ -16,22 +16,22 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </Control.Resources>
-    <DataGrid Name="dtgData"  ItemsSource="{Binding SourceCode}" CanUserAddRows="False" Margin="0,0,0,0" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" GridLinesVisibility="None"  ColumnWidth="*">
-        <DataGrid.RowStyle >
-            <Style TargetType="DataGridRow">
-                <Setter Property="Background" Value="{Binding Path=LineColor}"/>
-            </Style>
-        </DataGrid.RowStyle>
-        <DataGrid.Columns>
-            <DataGridTemplateColumn Width="*" Header="SourceCode">
-                <DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate >
-                        <TextBlock Text="{Binding Path=Line}">
-                             </TextBlock>
-                    </DataTemplate>
-                </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn>
-        </DataGrid.Columns>
-    </DataGrid>
+    </Window.Resources>
+            <DataGrid Name="dtgData" ItemsSource="{Binding SourceCode}" CanUserAddRows="False" Margin="0,0,0,0" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" GridLinesVisibility="None" CanUserResizeRows="False" CanUserResizeColumns="False" HeadersVisibility="Column">
+                <DataGrid.RowStyle >
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="{Binding Path=LineColor}"/>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="auto" Header="SourceCode">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <TextBlock Text="{Binding Path=Line}" Width="auto">
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
 </Controls:MetroWindow>

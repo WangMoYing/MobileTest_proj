@@ -46,7 +46,7 @@ namespace AliyunMobileTestTechnology.View
         {
             SourceCodeCoverageView sourceCodeView = new SourceCodeCoverageView();
             sourceCodeView.DataContext = ((CoverageViewModel)DataContext).SourceCodeCoverageVM;
-            sourceCodeView.ShowDialog();
+            sourceCodeView.ShowDialog();           
         }
     }
 }
